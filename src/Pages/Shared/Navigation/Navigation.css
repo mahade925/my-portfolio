@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background: #1b1b1b;
+}
+nav::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+nav .logo {
+    float: left;
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    padding-left: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+nav ul {
+    margin-top: 10px;
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+nav ul li {
+    float: left;
+    display: inline-block;
+    background: #1b1b1b;
+    margin: 0 5px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    font-family: 'Poppins', sans-serif;
+}
+nav ul li a:hover {
+    text-decoration: none;
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+nav ul ul {
+    position: absolute;
+    top: 70px;
+    display: none;
+}
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+.show, .icon, input {
+    display: none;
+}
+@media all and (max-width: 968px) {
+    nav ul {
+        text-align: center;
+        margin-top: 20px;
+    }
+    nav .logo {
+        padding-left: 30px;
+        width: 100%;
+        font-size: 25px;
+    }
+    nav ul li {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    .show:hover {
+        color: cyan;
+    }
+    .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        right: 40px;
+        line-height: 30px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav ul li a {
+        padding: 0;
+    }
+    nav ul li a:hover {
+        box-shadow: none;
+    }
+    .show + a, ul {
+        display: none;
+    }
+    [id^=btn]:checked + ul {
+        display: block;
+    }
+}
